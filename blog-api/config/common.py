@@ -46,6 +46,7 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'rest_framework', # for rest services via API
     )
 
     # Apps specific for this project go here.
