@@ -8,8 +8,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-# Subclass AbstractUser
 class User(AbstractUser):
+    followers = models.ManyToManyField('self', related_name='followers', symmetrical=False)
 
     def __unicode__(self):
         return self.username

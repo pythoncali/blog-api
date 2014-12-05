@@ -11,11 +11,15 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from sys import path
 from os.path import join, dirname
 
 from configurations import Configuration, values
 
 BASE_DIR = dirname(dirname(__file__))
+
+APPS_DIR = join(BASE_DIR, 'apps')
+path.insert(1, APPS_DIR)
 
 
 class Common(Configuration):
@@ -258,6 +262,11 @@ class Common(Configuration):
             'django.request': {
                 'handlers': ['mail_admins'],
                 'level': 'ERROR',
+                'propagate': True,
+            },
+            'blog': {
+                'handlers': ['console'],
+                'level': 'DEBUG',
                 'propagate': True,
             },
         }
