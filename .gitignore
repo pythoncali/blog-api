@@ -30,3 +30,4 @@ node_modules/
 
 # Campass
 .sass-cache
+blog-api/blog.sqlite3

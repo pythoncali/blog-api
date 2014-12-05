@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class User(AbstractUser):
-    followers = models.ManyToManyField('self', related_name='followers', symmetrical=False)
+    followers = models.ManyToManyField('self', symmetrical=False)
 
     def __unicode__(self):
         return self.username

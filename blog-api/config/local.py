@@ -7,7 +7,7 @@ Local Configurations
 - Use Django Debug Toolbar
 '''
 from configurations import values
-from .common import Common
+from .common import Common, os, BASE_DIR
 
 
 class Local(Common):
@@ -40,5 +40,17 @@ class Local(Common):
         'SHOW_TEMPLATE_CONTEXT': True,
     }
     # end django-debug-toolbar
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'blog.sqlite3'),
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
+
 
     # Your local stuff: Below this line define 3rd party libary settings

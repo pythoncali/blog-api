@@ -51,7 +51,8 @@ class Common(Configuration):
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
-        # Your stuff: custom apps go here
+        'blog',
+        'images',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -256,7 +257,11 @@ class Common(Configuration):
                 'level': 'ERROR',
                 'filters': ['require_debug_false'],
                 'class': 'django.utils.log.AdminEmailHandler'
-            }
+            },
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+            },
         },
         'loggers': {
             'django.request': {
