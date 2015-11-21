@@ -280,3 +280,18 @@ class Common(Configuration):
     # END LOGGING CONFIGURATION
 
     # Your common stuff: Below this line define 3rd party library settings
+    REST_FRAMEWORK = {
+        'DEFAULT_PARSER_CLASSES': (
+            'rest_framework.parsers.JSONParser',
+            'rest_framework.parsers.FormParser',
+            'rest_framework_xml.parsers.XMLParser',
+            'rest_framework_yaml.parsers.YAMLParser',
+        ),
+        'DEFAULT_RENDERER_CLASSES': (
+            'rest_framework.renderers.JSONRenderer',
+            'rest_framework.renderers.BrowsableAPIRenderer',
+            'rest_framework_xml.renderers.XMLRenderer',
+            'rest_framework_yaml.renderers.YAMLRenderer',
+            'rest_framework_csv.renderers.CSVRenderer',
+        ),
+    }
